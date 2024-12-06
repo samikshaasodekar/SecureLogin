@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class LoginView extends JFrame {
-    private JTextField emailField;
+    private JTextField usernameField;
     private JPasswordField passwordField;
     private JButton loginButton;
     private JLabel messageLabel;
@@ -43,7 +43,7 @@ public class LoginView extends JFrame {
         backgroundPanel.add(exitButton);
 
         // Form Fields
-        addLabelAndField(backgroundPanel, "Email:", 50, 80, emailField = new JTextField());
+        addLabelAndField(backgroundPanel, "Username:", 50, 80, usernameField = new JTextField());
         addLabelAndField(backgroundPanel, "Password:", 50, 120, passwordField = new JPasswordField());
 
         // Message Label
@@ -68,9 +68,10 @@ public class LoginView extends JFrame {
     }
 
     // Getters for input fields
-    public String getEmail() { return emailField.getText(); }
+    public String getUsername() { return usernameField.getText(); }
     public String getPassword() { return new String(passwordField.getPassword()); }
     public void setMessage(String message) { messageLabel.setText(message); }
     public void addLoginListener(ActionListener listener) { loginButton.addActionListener(listener); }
 }
+
 
