@@ -36,10 +36,8 @@ public class RegisterController {
         String password = registerView.getPassword();
         String phone = registerView.getPhone();
 
-        // Clear previous message
         registerView.setMessage("");
 
-        // Validate input fields
         if (!isValidEmail(email)) {
             registerView.setMessage("Invalid email format.");
             return;
@@ -67,13 +65,11 @@ public class RegisterController {
         }
     }
 
-    // Validate email format
     private boolean isValidEmail(String email) {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         return Pattern.matches(emailRegex, email);
     }
 
-    // Validate phone number (must be 10 digits)
     private boolean isValidPhone(String phone) {
         return phone.matches("\\d{10}");
     }
