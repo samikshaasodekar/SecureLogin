@@ -18,20 +18,17 @@ public class LoginView extends JFrame {
         setLocationRelativeTo(null);
         setLayout(null); 
 
-        // Set Background Color
         JPanel backgroundPanel = new JPanel();
         backgroundPanel.setBackground(new Color(173, 216, 230)); 
         backgroundPanel.setBounds(0, 0, 400, 400);
         backgroundPanel.setLayout(null); 
         add(backgroundPanel);
 
-        // Title Label
         JLabel titleLabel = new JLabel("Login", JLabel.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
         titleLabel.setBounds(100, 10, 200, 30);
         backgroundPanel.add(titleLabel);
 
-        // Exit Button
         JButton exitButton = new JButton("Exit");
         exitButton.setBounds(350, 11, 60, 30);
         exitButton.addActionListener(e -> {
@@ -42,17 +39,14 @@ public class LoginView extends JFrame {
         });
         backgroundPanel.add(exitButton);
 
-        // Form Fields
         addLabelAndField(backgroundPanel, "Username:", 50, 80, usernameField = new JTextField());
         addLabelAndField(backgroundPanel, "Password:", 50, 120, passwordField = new JPasswordField());
 
-        // Message Label
         messageLabel = new JLabel("");
         messageLabel.setForeground(Color.RED);
         messageLabel.setBounds(50, 160, 300, 25);
         backgroundPanel.add(messageLabel);
 
-        // Login Button
         loginButton = new JButton("Login");
         loginButton.setBounds(150, 200, 100, 30);
         backgroundPanel.add(loginButton);
@@ -67,7 +61,6 @@ public class LoginView extends JFrame {
         panel.add(field);
     }
 
-    // Getters for input fields
     public String getUsername() { return usernameField.getText(); }
     public String getPassword() { return new String(passwordField.getPassword()); }
     public void setMessage(String message) { messageLabel.setText(message); }
