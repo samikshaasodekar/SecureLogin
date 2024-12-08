@@ -21,9 +21,8 @@ public class LoginController {
     }
 
     private void validateLogin() {
-        String email = view.getEmail();
+        String email = view.getUsername(); 
         String password = view.getPassword();
-
         if (!isValidEmail(email)) {
             view.setMessage("Invalid email format.");
         } else if (password.isEmpty()) {
@@ -34,6 +33,7 @@ public class LoginController {
             view.setMessage("Invalid credentials.");
         }
     }
+
 
     private boolean isValidEmail(String email) {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
