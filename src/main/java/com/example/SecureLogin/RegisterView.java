@@ -20,21 +20,18 @@ public class RegisterView extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null); 
-        
-        // Set Background Color
+
         JPanel backgroundPanel = new JPanel();
         backgroundPanel.setBackground(new Color(173, 216, 230)); 
         backgroundPanel.setBounds(0, 0, 400, 400);
         backgroundPanel.setLayout(null); 
         add(backgroundPanel);
 
-        // Title Label
         JLabel titleLabel = new JLabel("Register", JLabel.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
         titleLabel.setBounds(100, 10, 200, 30);
         backgroundPanel.add(titleLabel);
 
-        // Exit Button
         JButton exitButton = new JButton("Exit");
         exitButton.setBounds(350, 11, 60, 30);
         exitButton.addActionListener(e -> {
@@ -45,19 +42,16 @@ public class RegisterView extends JFrame {
         });
         backgroundPanel.add(exitButton);
 
-        // Form Fields
         addLabelAndField(backgroundPanel, "Username:", 50, 60, usernameField = new JTextField());
         addLabelAndField(backgroundPanel, "Email:", 50, 100, emailField = new JTextField());
         addLabelAndField(backgroundPanel, "Password:", 50, 140, passwordField = new JPasswordField());
         addLabelAndField(backgroundPanel, "Phone:", 50, 180, phoneField = new JTextField());
 
-        // Message Label
         messageLabel = new JLabel("");
         messageLabel.setForeground(Color.RED);
         messageLabel.setBounds(50, 220, 300, 25);
         backgroundPanel.add(messageLabel);
 
-        // Register and Login Buttons
         registerButton = new JButton("Register");
         registerButton.setBounds(100, 260, 90, 30);
         backgroundPanel.add(registerButton);
@@ -76,7 +70,6 @@ public class RegisterView extends JFrame {
         panel.add(field);
     }
 
-    // Getters for input fields
     public String getUsername() { return usernameField.getText(); }
     public String getEmail() { return emailField.getText(); }
     public String getPassword() { return new String(passwordField.getPassword()); }
